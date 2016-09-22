@@ -1,0 +1,47 @@
+<%= form_for(resume) do |f| %>
+  <% if resume.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(resume.errors.count, "error") %> prohibited this resume from being saved:</h2>
+
+      <ul>
+      <% resume.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :contact %>
+    <%= f.bootsy_area :contact, rows: "4", placeholder: "Provide ways for potential employers to contact you", class: "form-control", editor_options: { image: false, color: false } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :objective %>
+    <%= f.text_field :objective, placeholder: "What is your goal (eg. 'To begin a career as ...')?", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :education %>
+    <%= f.bootsy_area :education, rows: "5", placeholder: "What important courses have you taken that relate to this position?", class: "form-control", editor_options: { image: false, color: false } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :experience %>
+    <%= f.bootsy_area :experience, rows: "4", placeholder: "Do you have any work or volunteer experience?  List it here.", class: "form-control", editor_options: { image: false, color: false } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :skills %>
+    <%= f.bootsy_area :skills, rows: "3", placeholder: "What other skills do you have that relate to the job (eg. computers, design, character qualities)?", class: "form-control", editor_options: { image: false, color: false } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :references %>
+    <%= f.bootsy_area :references, rows: "3", placeholder: "Provide contact information for people who can comment about your work", class: "form-control", editor_options: { image: false, color: false } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit class: "btn btn-block btn-success" %>
+  </div>
+<% end %>

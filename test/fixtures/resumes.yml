@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  contact: MyText
+  objective: MyString
+  education: MyText
+  experience: MyText
+  skills: MyText
+  references: MyText
+  user: one
+
+two:
+  contact: MyText
+  objective: MyString
+  education: MyText
+  experience: MyText
+  skills: MyText
+  references: MyText
+  user: two

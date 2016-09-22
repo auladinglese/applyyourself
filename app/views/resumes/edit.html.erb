@@ -1,0 +1,24 @@
+<% if user_signed_in? %>
+    <div class="centercontainer panelpadding">
+        <div class="centerrow">
+            <div class="centercolumnresume">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Edit Your Resume</h2>
+                    </div>
+                    <div class="panel-body">
+                        <%= render 'form', resume: @resume %>
+                    </div>
+                    <div class="panel-footer">
+                        <%= link_to 'Back', resumes_path %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<% else %>
+    <div class="jumbotron">
+        <h1>Not authorized.</h1>
+        <p><%= link_to "Go Back", root_path, class: "btn btn-info" %></p>
+    </div>
+<% end %>

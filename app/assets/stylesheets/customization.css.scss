@@ -1,0 +1,83 @@
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+html, body {
+    background: repeating-linear-gradient(
+  -55deg,
+  #FFFFFF,
+  #F2F3F3 2px,
+  #FFFFFF 2px,
+  #F2F3F3 2px);
+}
+
+/* this keeps a single item in the exact center - perfect for forms */
+
+.centercontainer {
+    height: 100%;
+    display: table;
+    width: 100%;
+    padding: 0;
+}
+ 
+.centerrow {
+    height: 100%; 
+    display: table-cell; 
+    vertical-align: middle;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.centerrowresume {
+    height: 100%; 
+    display: table-cell; 
+    vertical-align: middle;
+}
+ 
+.centercolumn {
+    float:none;
+    margin:0 auto;
+    width: 95%;
+    max-width: 500px;
+}
+
+.centercolumnresume {
+    float:none;
+    margin:0 auto;
+    width: 95%;
+    max-width: 900px;
+}
+
+.alert {
+    -webkit-animation-delay: 3s;
+    -moz-animation-delay: 3s;
+    -o-animation-delay: 3s;
+    -ms-animation-delay: 3s;
+}
+
+.btn {
+    box-shadow: 0 3px 0 0 #B8BBBC;
+}
+
+.panelpadding {
+    padding-top: 3%;
+}
+
+.splash {
+    margin: 135px auto;
+}
+
+.splashform {
+    margin: 80px auto;
+}
+
+.alert {
+    width: 100%;
+    margin-top: 7%;
+    position: fixed;
+    -webkit-animation-delay: 3s;
+    -moz-animation-delay: 3s;
+    -o-animation-delay: 3s;
+    -ms-animation-delay: 3s;
+}

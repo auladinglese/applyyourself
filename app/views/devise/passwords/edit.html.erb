@@ -1,0 +1,33 @@
+<div class="centercontainer">
+    <div class="centerrow">
+        <div class="centercolumn">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Change your password</h2>
+                </div>
+                <div class="panel-body">
+
+                    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+                      <%= devise_error_messages! %>
+                      <%= f.hidden_field :reset_password_token, class: "form-control" %>
+
+                      <div class="form-group">
+                        <%= f.password_field :password, autofocus: true, autocomplete: "off", class: "form-control", placeholder: "Type a new password." %>
+                      </div>
+
+                      <div class="form-group">
+                        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Confirm your new password." %>
+                      </div>
+
+                      <div class="form-group">
+                        <%= f.submit "Change my password", class: "btn btn-success btn-block" %>
+                      </div>
+                    <% end %>
+                </div>
+                <div class="panel-footer">
+                    <%= render "devise/shared/links" %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
