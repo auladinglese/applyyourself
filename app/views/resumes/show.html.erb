@@ -7,10 +7,10 @@
                 <h1>Resume</h1>
             </div>
         </div>
-        <div class="col-xs-12">       
+        <div class="col-xs-8 col-xs-offset-2">       
             <div class="page-header text-center">
                 <h2>
-                    <%= @resume.user.name %>
+                    <i><%= @resume.user.name %></i>
                     <br>
                     <small><%= raw(@resume.contact) %></small>
                 </h2>
@@ -46,9 +46,7 @@
                 <%= raw(@resume.references) %>
             </p>
         </div>
-        <br>
-        <br>
-        <div class="col-xs-10 col-xs-offset-1 panelpaddingbottom">
+        <div class="col-xs-8 col-xs-offset-2 panelpadding panelpaddingbottom">
             <div class="btn-group btn-group-justified" role="group">
                 <%= link_to 'Edit', edit_resume_path(@resume), class: "btn btn-primary" %>
                 <%= link_to 'Delete', @resume, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>

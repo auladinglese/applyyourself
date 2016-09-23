@@ -1,4 +1,8 @@
 $navbar-height: 70px;
+$alert-info-bg: #222;
+$alert-info-text: #E8E8E8;
+$alert-info-border: #222;
+$well-bg: #FFF;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -49,19 +53,12 @@ html, body {
     max-width: 900px;
 }
 
-.alert {
-    -webkit-animation-delay: 3s;
-    -moz-animation-delay: 3s;
-    -o-animation-delay: 3s;
-    -ms-animation-delay: 3s;
-}
-
 .btn {
     box-shadow: 0 3px 0 0 #B8BBBC;
 }
 
 .panelpadding {
-    padding-top: 3%;
+    padding-top: 5%;
 }
 
 .panelpaddingbottom {
@@ -82,10 +79,27 @@ html, body {
 
 .alert {
     width: 100%;
-    margin-top: 7%;
     position: fixed;
+    z-index: 9000;
+    height: 70px;
+    padding: 24px;
+    border: none;
     -webkit-animation-delay: 3s;
     -moz-animation-delay: 3s;
     -o-animation-delay: 3s;
     -ms-animation-delay: 3s;
+}
+
+.well {
+    padding: 1.5%;
+}
+
+.tab-content .tab-pane
+{
+  display: none;
+}
+
+.tab-content .active
+{
+  display: block;
 }
