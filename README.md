@@ -1,24 +1,23 @@
-# README
+# Apply Yourself
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Apply Yourself is a simple app to simulate an online job search for ESL / EFL students.
 
-Things you may want to cover:
+The app aims to include the following features:
 
-* Ruby version
+* Scaffolded resume building to reinforce common resume styling
 
-* System dependencies
+* Private feedback from a teacher on student writing
 
-* Configuration
+* The ability to export created documents as PDFs
 
-* Database creation
+* The abilty to browse mock job listings
 
-* Database initialization
+* Simulated correspondence between a student and a potential employer
 
-* How to run the test suite
+* Minimalistic design for quick page loads
 
-* Services (job queues, cache servers, search engines, etc.)
+* Mobile first design with Bootstrap 3
 
-* Deployment instructions
+* Secure user authentication with Devise
 
-* ...
+This app is designed to be used with a single class and one teacher (admin).
