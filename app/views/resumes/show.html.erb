@@ -1,47 +1,66 @@
-<p id="notice"><%= notice %></p>
+<% if current_user.try(:admin?) or current_user == @resume.user %>
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Contact:</strong>
-  <%= @resume.contact %>
-</p>
+    <div class="row panelpadding">
+        <div class="col-xs-12">
+            <div class="text-center">
+                <h1>Resume</h1>
+            </div>
+        </div>
+        <div class="col-xs-12">       
+            <div class="page-header text-center">
+                <h2>
+                    <%= @resume.user.name %>
+                    <br>
+                    <small><%= raw(@resume.contact) %></small>
+                </h2>
+            </div>
+        </div>
+        <div class="col-xs-8 col-xs-offset-2 well well-sm">
+            <p>
+                <h3><strong>Objective:</strong></h3><br>
+                <%= @resume.objective %>
+            </p>
+            <br>
+            <br>
+            <p>
+                <h3><strong>Education:</strong></h3><strong><br>
+                <%= raw(@resume.education) %>
+            </p>
+            <br>
+            <br>
+            <p>
+                <h3><strong>Experience:</strong></h3><br>
+                <%= raw(@resume.experience) %>
+            </p>
+            <br>
+            <br>
+            <p>
+                <h3><strong>Skills:</strong></h3><br>
+                <%= raw(@resume.skills) %>
+            </p>
+            <br>
+            <br>
+            <p>
+                <h3><strong>References:</strong></h3><br>
+                <%= raw(@resume.references) %>
+            </p>
+        </div>
+        <br>
+        <br>
+        <div class="col-xs-10 col-xs-offset-1 panelpaddingbottom">
+            <div class="btn-group btn-group-justified" role="group">
+                <%= link_to 'Edit', edit_resume_path(@resume), class: "btn btn-primary" %>
+                <%= link_to 'Delete', @resume, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+        </div>
 
-<p>
-  <strong>Objective:</strong>
-  <%= @resume.objective %>
-</p>
-
-<p>
-  <strong>Education:</strong>
-  <%= @resume.education %>
-</p>
-
-<p>
-  <strong>Experience:</strong>
-  <%= @resume.experience %>
-</p>
-
-<p>
-  <strong>Skills:</strong>
-  <%= @resume.skills %>
-</p>
-
-<p>
-  <strong>References:</strong>
-  <%= @resume.references %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @resume.user %>
-</p>
-
-<%= link_to 'Edit', edit_resume_path(@resume) %> |
-<%= link_to 'Back', resumes_path %>
-
-<div class="page-header">
-    <h1>
-        <%= @resume.user %>
-        <small><%= @resume.contact %></small>
-    </h1>
-</div>
-
+    </div>
+<% else %>
+    <div class="jumbopadding">
+        <div class="jumbotron">
+            <h1>Not authorized.</h1>
+            <p><%= link_to "Go Back", root_path, class: "btn btn-info" %></p>
+        </div>
+    </div>
+<% end %>

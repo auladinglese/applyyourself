@@ -10,7 +10,7 @@
                         <%= render 'form', resume: @resume %>
                     </div>
                     <div class="panel-footer">
-                        <%= link_to 'Back', resumes_path %>
+                        <%= link_to 'Back', :back %>
                     </div>
                 </div>
             </div>
@@ -19,6 +19,6 @@
 <% else %>
     <div class="jumbotron">
         <h1>Not authorized.</h1>
-        <p><%= link_to "Go Back", root_path, class: "btn btn-info" %></p>
+        <p><%= link_to "Go Back", :back, class: "btn btn-info" %></p>
     </div>
 <% end %>

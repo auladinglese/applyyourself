@@ -1,4 +1,4 @@
-
+$navbar-height: 70px;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -64,12 +64,20 @@ html, body {
     padding-top: 3%;
 }
 
+.panelpaddingbottom {
+    padding-bottom: 3%;
+}
+
+.jumbopadding {
+    padding-top: 6%;
+}
+
 .splash {
     margin: 135px auto;
 }
 
 .splashform {
-    margin: 80px auto;
+    margin: 55px auto;
 }
 
 .alert {

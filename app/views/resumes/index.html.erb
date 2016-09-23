@@ -1,39 +1,35 @@
-<p id="notice"><%= notice %></p>
+<% if current_user.try(:admin?) %>
+    <p id="notice"><%= notice %></p>
 
-<h1>Resumes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Contact</th>
-      <th>Objective</th>
-      <th>Education</th>
-      <th>Experience</th>
-      <th>Skills</th>
-      <th>References</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @resumes.each do |resume| %>
-      <tr>
-        <td><%= resume.contact %></td>
-        <td><%= resume.objective %></td>
-        <td><%= resume.education %></td>
-        <td><%= resume.experience %></td>
-        <td><%= resume.skills %></td>
-        <td><%= resume.references %></td>
-        <td><%= resume.user %></td>
-        <td><%= link_to 'Show', resume %></td>
-        <td><%= link_to 'Edit', edit_resume_path(resume) %></td>
-        <td><%= link_to 'Destroy', resume, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Resume', new_resume_path %>
+    <div class="row panelpadding">
+        <div class="col-xs-12 panelpaddingbottom">
+            <div class="text-center">
+                <h1>All Resumes</h1>
+            </div>
+        </div>
+        <div class="col-xs-12">       
+            <% @resumes.each do |resume| %>
+                <div class="jumbotron panelpadding panelpaddingbottom">
+                    <h2>
+                        <%= resume.user.name %>
+                        <%= link_to resume do %>
+                            <span class="glyphicon glyphicon-search"></span>
+                        <% end %>
+                    </h2>
+                    <p><%= resume.objective %></p>
+                        <div class="btn-group">
+                            <%= link_to 'Edit', edit_resume_path(resume), class: "btn btn-info" %>
+                            <%= link_to 'Delete', resume, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+                        </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+<% else %>
+    <div class="jumbopadding">
+        <div class="jumbotron">
+            <h1>Not authorized.</h1>
+            <p><%= link_to "Go Back", root_path, class: "btn btn-info" %></p>
+        </div>
+    </div>
+<% end %>

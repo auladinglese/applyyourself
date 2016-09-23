@@ -37,7 +37,7 @@ class ResumesController < ApplicationController
 
   def destroy
     @resume.destroy
-      redirect_to resumes_url, notice: 'Resume was successfully destroyed.'
+      redirect_to root_path, notice: 'Resume was successfully destroyed.'
     
   end
 
