@@ -1,8 +1,13 @@
+@import 'https://fonts.googleapis.com/css?family=Droid+Serif|Ubuntu';
+
 $navbar-height: 70px;
 $alert-info-bg: #222;
-$alert-info-text: #E8E8E8;
+$alert-info-text: #BDC3C7;
 $alert-info-border: #222;
 $well-bg: #FFF;
+$font-family-sans-serif: 'Ubuntu', sans-serif;
+$font-family-serif: 'Droid Serif', serif;
+
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -58,7 +63,7 @@ html, body {
 }
 
 .panelpadding {
-    padding-top: 5%;
+    padding-top: 6%;
 }
 
 .panelpaddingbottom {
@@ -70,11 +75,11 @@ html, body {
 }
 
 .splash {
-    margin: 135px auto;
+    margin-top: 85px;
 }
 
 .splashform {
-    margin: 55px auto;
+    margin-top: 35px;
 }
 
 .alert {
@@ -102,4 +107,19 @@ html, body {
 .tab-content .active
 {
   display: block;
+}
+
+.brandimage {
+    margin-top: -17px;
+    width: 55px;
+}
+
+.pageimage {
+    width: 100px;
+}
+
+.footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }

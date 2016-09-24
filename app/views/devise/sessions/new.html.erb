@@ -2,7 +2,11 @@
     <div class="centercontainer">
         <div class="centerrow">
             <div class="centercolumn">
-                <h1 class="text-center"><%= link_to "Apply Yourself", root_path %></h1>
+                <div class="text-center animated flipInX">
+                    <%= link_to root_path do %>
+                        <%= image_tag('aytext.png', :alt => "Brand", :class => "inline-block pageimage") %>
+                    <% end %>
+                </div>
                 <br>
                 <div class="panel panel-default">
                     <div class="panel-heading">
