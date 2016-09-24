@@ -1,13 +1,13 @@
 <% if current_user.try(:admin?) or current_user == @resume.user %>
     <p id="notice"><%= notice %></p>
 
-    <div class="row panelpadding">
+    <div class="row resumepadding">
         <div class="col-xs-12">
             <div class="text-center">
                 <h1>Resume</h1>
             </div>
         </div>
-        <div class="col-xs-8 col-xs-offset-2">       
+        <div class="col-xs-12 col-lg-8 col-lg-offset-2">       
             <div class="page-header text-center">
                 <h2>
                     <i><%= @resume.user.name %></i>
@@ -16,7 +16,7 @@
                 </h2>
             </div>
         </div>
-        <div class="col-xs-8 col-xs-offset-2 well well-sm">
+        <div class="col-xs-12 col-lg-8 col-lg-offset-2 well well-sm">
             <p>
                 <h3><strong>Objective:</strong></h3><br>
                 <%= @resume.objective %>
@@ -46,13 +46,12 @@
                 <%= raw(@resume.references) %>
             </p>
         </div>
-        <div class="col-xs-8 col-xs-offset-2 panelpadding panelpaddingbottom">
+        <div class="col-xs-12 col-lg-8 col-lg-offset-2">
             <div class="btn-group btn-group-justified" role="group">
                 <%= link_to 'Edit', edit_resume_path(@resume), class: "btn btn-primary" %>
                 <%= link_to 'Delete', @resume, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
             </div>
         </div>
-
     </div>
 <% else %>
     <div class="jumbopadding">

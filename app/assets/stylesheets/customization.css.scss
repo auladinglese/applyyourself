@@ -23,23 +23,23 @@ html, body {
 
 /* this keeps a single item in the exact center - perfect for forms */
 
-.centercontainer {
+html, body {
     height: 100%;
+}
+
+.centercontainer {
     display: table;
     width: 100%;
     padding: 0;
 }
  
 .centerrow {
-    height: 100%; 
     display: table-cell; 
     vertical-align: middle;
     padding-top: 5%;
-    padding-bottom: 5%;
 }
 
 .centerrowresume {
-    height: 100%; 
     display: table-cell; 
     vertical-align: middle;
 }
@@ -60,26 +60,6 @@ html, body {
 
 .btn {
     box-shadow: 0 3px 0 0 #B8BBBC;
-}
-
-.panelpadding {
-    padding-top: 6%;
-}
-
-.panelpaddingbottom {
-    padding-bottom: 3%;
-}
-
-.jumbopadding {
-    padding-top: 6%;
-}
-
-.splash {
-    margin-top: 85px;
-}
-
-.splashform {
-    margin-top: 35px;
 }
 
 .alert {
@@ -118,8 +98,19 @@ html, body {
     width: 100px;
 }
 
-.footer {
+#container {
+    min-height: 100%;
+    position: relative;
+    padding-top: 100px;
+}
+
+#footer {
     width: 100%;
-    position: absolute;
     bottom: 0;
+    left: 0;
+    position: absolute;
+}
+
+.resumepadding {
+    padding-bottom: 60px;
 }

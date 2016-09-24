@@ -18,9 +18,13 @@
   </head>
 
   <body>
-      <div class="container">
-	       <%= yield %>
+      <div class="container" id="container">
+          <div id="content">
+	           <%= yield %>
+          </div>
+          <div id="footer" class="text-center">
+              <%= render 'pages/footer' %>
+          </div>
       </div>
-      <%= render 'pages/footer' %>
   </body>
 </html>
