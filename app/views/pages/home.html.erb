@@ -1,31 +1,29 @@
-<div class="splash">
-	<div class="centercontainer">
-		<div class="centerrow">
-			<div class="centercolumn">
-				<div class="page-header text-center">
-					<div class="animated flipInX">
-						<%= image_tag('aytext.png', :alt => "Brand", :class => "inline-block pageimage") %>
-					</div>
-					<h1>
-						Apply Yourself
-						<br>
-						<small>(simulated job hunting)</small>
-					</h1>
+<div class="centercontainer reviewsdiv">
+	<div class="centerrow">
+		<div class="centercolumn">
+			<div class="page-header text-center">
+				<div class="animated flipInX">
+					<%= image_tag('aytext.png', :alt => "Brand", :class => "inline-block pageimage") %>
 				</div>
-				<% unless user_signed_in? %>
-					<p class="text-center"><%= link_to "Get Started", new_user_registration_path, class: "btn btn-primary btn-raised" %> or <%= link_to "Log in", new_user_session_path %></p>
-				<% else %>
-					<% unless current_user.resume(@resume) %>
-						<%= link_to "Build Your Resume", new_resume_path, class: "btn btn-block btn-primary btn-raised" %>
-					<% else %>
-						<a href="#" class="btn btn-block btn-primary btn-raised disabled">Apply for Jobs</a>
-						<br>
-						<div class="well">
-							<p><%= current_user.name %>, <br><br>You are all finished for now.  After I review your resume, you can make changes.  Then, we'll start 'applying' for jobs. <br><br><strong>-Thaddeus</strong></p>
-						</div>
-					<% end %>
-				<% end %>
+				<h1>
+					Apply Yourself
+					<br>
+					<small>(simulated job hunting)</small>
+				</h1>
 			</div>
+			<% unless user_signed_in? %>
+				<p class="text-center"><%= link_to "Get Started", new_user_registration_path, class: "btn btn-primary btn-raised" %> or <%= link_to "Log in", new_user_session_path %></p>
+			<% else %>
+				<% unless current_user.resume(@resume) %>
+					<%= link_to "Build Your Resume", new_resume_path, class: "btn btn-block btn-primary btn-raised" %>
+				<% else %>
+					<a href="#" class="btn btn-block btn-primary btn-raised disabled">Apply for Jobs</a>
+					<br>
+					<div class="well">
+						<p><%= current_user.name %>, <br><br>You are all finished for now.  After I review your resume, you can make changes.  Then, we'll start 'applying' for jobs. <br><br><strong>-Thaddeus</strong></p>
+					</div>
+				<% end %>
+			<% end %>
 		</div>
 	</div>
 </div>

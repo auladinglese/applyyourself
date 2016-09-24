@@ -38,8 +38,10 @@
           <ul class="dropdown-menu">
             <li>
                 <% if current_user.resume(@resume) %>
-                    <%= link_to resume_path(current_user.resume) do %>
-                        <span class="glyphicon glyphicon-zoom-in"></span> My Resume
+                    <% unless current_user.try(:admin?) %>
+                        <%= link_to resume_path(current_user.resume) do %>
+                            <span class="glyphicon glyphicon-zoom-in"></span> My Resume
+                        <% end %>
                     <% end %>
                 <% end %>      
             </li>

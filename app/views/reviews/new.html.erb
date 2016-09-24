@@ -2,9 +2,9 @@
     <div class="centerrow">
         <div class="centercolumnresume">
             <div class="jumbotron"> 
-                <% if @parent == @resume %>
+                <% if @parent.try(:contact?) %>
                     <h2>
-                        <i><%= @resume.user.name rescue nil %></i>
+                        <i><%= @parent.user.name rescue nil %></i>
                         <br>
                         <small><%= raw(@parent.contact) rescue nil%></small>
                     </h2>
