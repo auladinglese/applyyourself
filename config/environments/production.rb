@@ -22,7 +22,8 @@ Rails.application.configure do
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
-  config.action_mailer.default_url_options = { :host => 'aydnu.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'ayndu.herokuapp.com' }
+  Rails.application.routes.default_url_options[:host] = 'aydnu.herokuapp.com'
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
@@ -37,7 +38,7 @@ Rails.application.configure do
   enable_starttls_auto: true,
   user_name: ENV["GMAIL_USERNAME"],
   password: ENV["GMAIL_PASSWORD"]
-  }
+  }  
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
