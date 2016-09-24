@@ -17,6 +17,8 @@
 !/log/.keep
 !/tmp/.keep
 .DS_Store
+.env
+Procfile
 
 # Ignore Byebug command history file.
 .byebug_history
