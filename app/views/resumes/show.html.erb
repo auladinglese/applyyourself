@@ -50,6 +50,18 @@
                 <%= link_to 'Delete', @resume, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
             </div>
         </div>
+        <div class="col-xs-12 col-lg-8 col-lg-offset-2">
+            <div class="page-header">
+                <h3>Review</h3>
+            </div>
+            <div class="reviewdiv">
+                <% if current_user.try(:admin?) %>
+                    <%= link_to 'Write a Review', new_resume_review_path(@resume), class: "btn btn-success btn-block" %>
+                <% end %>
+                <br>
+                <%= render :partial => 'reviews/review', :collection => @resume.reviews %>
+            </div>
+        </div>
     </div>
 <% else %>
     <div class="jumbopadding">

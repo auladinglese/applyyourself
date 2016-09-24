@@ -26,12 +26,21 @@
                 <a href="#"><span class="glyphicon glyphicon-file"></span> Apply for Jobs</a>
             <% end %>
         </li>
+        <li>
+            <% if current_user.try(:admin?) %>
+                <%= link_to resumes_path do %>
+                    <span class="glyphicon glyphicon-list"></span> All Resumes
+                <% end %>
+            <% end %>
+        </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> <%= current_user.name %> <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li>
                 <% if current_user.resume(@resume) %>
-                    <%= link_to "My Resume", resume_path(current_user.resume) %>
+                    <%= link_to resume_path(current_user.resume) do %>
+                        <span class="glyphicon glyphicon-zoom-in"></span> My Resume
+                    <% end %>
                 <% end %>      
             </li>
             <li><%= link_to edit_user_registration_path do %>

@@ -6,5 +6,15 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'pages/privacy'
 
+  get 'reviews/show'
+
+  resources :reviews do
+    resources :reviews
+  end
+ 
+  resources :resumes do
+    resources :reviews
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

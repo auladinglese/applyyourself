@@ -1,0 +1,58 @@
+<div class="centercontainer resumepadding">
+    <div class="centerrow">
+        <div class="centercolumnresume">
+            <div class="jumbotron"> 
+                <% if @parent == @resume %>
+                    <h2>
+                        <i><%= @resume.user.name rescue nil %></i>
+                        <br>
+                        <small><%= raw(@parent.contact) rescue nil%></small>
+                    </h2>
+                    <br>
+                    <p>
+                        <%= raw(@parent.objective) rescue nil %>
+                    </p>
+                    <p>
+                        <%= raw(@parent.education) rescue nil %>
+                    </p>
+                    <p>    
+                        <%= raw(@parent.experience) rescue nil %>
+                    </p>
+                    <p>
+                        <%= raw(@parent.skills) rescue nil %>
+                    </p>
+                    <p>
+                        <%= raw(@parent.references) rescue nil %>
+                    </p>
+                <% else %>
+                    <p>
+                        <%= raw(@parent.body) rescue nil %>
+                        <br>
+                        from <i><%= @parent.user.name rescue nil %></i>
+                    </p>
+                <% end %>
+            </div>
+        	<div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Write a Review</h2>
+                </div>
+                <div class="panel-body">
+                    <%= form_for [@parent, @review] do |f| %>
+        				<div class="form-group">
+        					<%= f.bootsy_area :body, class:"form-control", rows: "4", editor_options: { image: false, font_styles: false, color: false } %>
+        				</div>
+        				<div class="form-group">
+        					<%= f.submit class: "btn btn-success btn-block" %>
+						</div>    				
+    				<% end %>
+                </div>
+                <div class="panel-footer">
+                    <%= link_to 'Back', :back %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
