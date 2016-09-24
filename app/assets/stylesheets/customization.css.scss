@@ -36,7 +36,6 @@ html, body {
 .centerrow {
     display: table-cell; 
     vertical-align: middle;
-    padding-top: 5%;
 }
 
 .centerrowresume {
@@ -113,4 +112,8 @@ html, body {
 
 .resumepadding {
     padding-bottom: 60px;
+}
+
+#error_explanation h2 {
+  display: none;
 }

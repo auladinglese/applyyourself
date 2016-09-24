@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AY</title>
+    <title>Apply Yourself</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application' %>
     <%= javascript_include_tag 'application' %>
-
+    <%= favicon_link_tag 'aytext.png' %>
     <% if user_signed_in?%>
     	<%= render 'pages/header' %>
     <% end %>
