@@ -33,7 +33,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
   address: "secureams30.sgcpanel.com",
   port: 465,
-  domain: ENV["GMAIL_DOMAIN"],
+  domain: ENV["DOMAIN"],
   authentication: "plain",
   enable_starttls_auto: true,
   user_name: ENV["USERNAME"],
