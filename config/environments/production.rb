@@ -31,7 +31,7 @@ Rails.application.configure do
   config.action_mailer.default :charset => "utf-8"
 
   config.action_mailer.smtp_settings = {
-  address: "secureams30.sgcpanel.com",
+  address: "mail.enupgrade.com",
   port: 465,
   domain: ENV["DOMAIN"],
   authentication: "plain",
