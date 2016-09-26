@@ -1,4 +1,4 @@
-![Apply Yourself](/images/aytextgit.png)
+![Apply Yourself](/app/assets/images/aytextgit.png)
 
 # Apply Yourself
 
