@@ -1,3 +1,5 @@
+![Apply Yourself](/images/aytext.png)
+
 # Apply Yourself
 
 Apply Yourself is a simple app to simulate an online job search for ESL / EFL students.
