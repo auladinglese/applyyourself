@@ -13,12 +13,8 @@ $font-family-serif: 'Droid Serif', serif;
 @import "bootstrap";
 
 html, body {
-    background: repeating-linear-gradient(
-  -55deg,
-  #FFFFFF,
-  #F2F3F3 2px,
-  #FFFFFF 2px,
-  #F2F3F3 2px);
+    background-color: #F9FAFA;
+    background-image: image-url("noisy-grid.png");
 }
 
 /* this keeps a single item in the exact center - perfect for forms */
