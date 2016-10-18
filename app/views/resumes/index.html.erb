@@ -1,11 +1,12 @@
 <% if current_user.try(:admin?) %>
     <p id="notice"><%= notice %></p>
 
-    <div class="row panelpadding">
+    <div class="row resumepadding">
         <div class="col-xs-12 panelpaddingbottom">
             <div class="text-center">
                 <h1>All Resumes</h1>
             </div>
+            <br>
         </div>
         <div class="col-xs-12">       
             <% @resumes.each do |resume| %>
