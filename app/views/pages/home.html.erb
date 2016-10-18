@@ -17,10 +17,10 @@
 				<% unless current_user.resume(@resume) %>
 					<%= link_to "Build Your Resume", new_resume_path, class: "btn btn-block btn-primary btn-raised" %>
 				<% else %>
-					<a href="#" class="btn btn-block btn-primary btn-raised disabled">Apply for Jobs</a>
+					<%= link_to "Improve Your Resume", current_user.resume, class: "btn btn-block btn-primary btn-raised" %>
 					<br>
 					<div class="well">
-						<p><%= current_user.name %>, <br><br>You are all finished for now.  After I review your resume, you can make changes.  Then, we'll start 'applying' for jobs. <br><br><strong>-Thaddeus</strong></p>
+						<p><%= current_user.name %>, <br><br>Please read the review I have left below your resume.  Then, make changes to your resume following the recommendations. <br><br><strong>-Thaddeus</strong></p>
 					</div>
 				<% end %>
 			<% end %>
