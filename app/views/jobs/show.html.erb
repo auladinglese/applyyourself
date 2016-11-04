@@ -1,0 +1,56 @@
+<% if user_signed_in? %>
+    <div class="row resumepadding">
+        <div class="col-xs-12">
+            <div class="text-center">
+                <h1>Opportunity</h1>
+            </div>
+        </div>
+        <div class="col-xs-12 col-lg-8 col-lg-offset-2">      
+            <div class="page-header text-center">
+                <h2>
+                    <i><%= @job.title %></i>
+                    <br>
+                    <small>Contact: <%= @job.user.name %></small>
+                </h2>
+            </div>
+        </div>
+        <div class="col-xs-12 col-lg-8 col-lg-offset-2 well well-sm">
+            <p>
+                <h3><strong>Description:</strong></h3><br>
+                <%= @job.description %>
+            </p>
+            <br>
+            <hr>
+            <br>
+            <p>
+                <h3><strong>Requirements:</strong></h3><br>
+                <%= raw(@job.requirements) %>
+            </p>
+            <br>
+            <hr>
+            <br>
+            <p>
+                <h3><strong>Benefits:</strong></h3><br>
+                <%= raw(@job.benefits) %>
+            </p>
+        </div>
+        <div class="col-xs-12 col-lg-8 col-lg-offset-2">
+            <% if current_user.try(:admin?) or current_user == @job.user(@job) %>
+            	<br>
+		        <div class="btn-group btn-group-justified" role="group">
+		            <%= link_to "Back", jobs_path, class: "btn btn-success" %>
+		            <%= link_to 'Edit', edit_job_path(@job), class: "btn btn-primary" %>
+		            <%= link_to 'Delete', @job, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+		        </div>
+			<% else %>
+				<br>
+            	<%= link_to "Back", jobs_path, class: "btn btn-success btn-block" %> 
+            <% end %>
+        </div>
+    </div>
+<% else %>
+    <div class="jumbotron">
+        <h1>Not authorized.</h1>
+        <p><%= link_to "Go Back", root_path, class: "btn btn-info" %></p>
+    </div>
+<% end %>

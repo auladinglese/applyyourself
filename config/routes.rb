@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :jobs
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   resources :resumes
   devise_for :users

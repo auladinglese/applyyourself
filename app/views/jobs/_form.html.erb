@@ -1,0 +1,49 @@
+<%= form_for(job) do |f| %>
+  <% if job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% job.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <ul class="nav nav-pills nav-stacked">
+      <li role="create job" class="active"><a href="#titleArea" aria-controls="titleArea" role="tab" data-toggle="tab">Title</a></li>
+      <li role="create job"><a href="#descriptionArea" aria-controls="descriptionArea" role="tab" data-toggle="tab">Description <span class="glyphicon glyphicon-pencil"></span></a></li>
+      <li role="create job"><a href="#requirementsArea" aria-controls="requirementsArea" role="tab" data-toggle="tab">Requirements <span class="glyphicon glyphicon-pencil"></span></a></li>
+      <li role="create job"><a href="#benefitsArea" aria-controls="benefitsArea" role="tab" data-toggle="tab">Benefits <span class="glyphicon glyphicon-pencil"></span></a></li>
+    </ul>
+    <br>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="titleArea">
+            <%= f.text_field :title, placeholder: "example: Translator", class: "form-control" %>
+            <br>
+        </div>
+
+        <div role="tabpanel" class="tab-pane fade" id="descriptionArea">
+            <%= f.bootsy_area :description, rows: "7", placeholder: "What are the duties of the position? Where is it located?  How many hours a week?", class: "form-control", editor_options: { image: false, color: false } %>
+            <br>
+        </div>
+
+        <div role="tabpanel" class="tab-pane fade" id="requirementsArea">
+            <%= f.bootsy_area :requirements, rows: "6", placeholder: "What skills or prior knowledge are required to be successful in this position?", class: "form-control", editor_options: { image: false, color: false } %>
+            <br>
+        </div>
+
+        <div role="tabpanel" class="tab-pane fade" id="benefitsArea">
+            <%= f.bootsy_area :benefits, rows: "5", placeholder: "What is the salary or stipend for the opportunity?  What other benefits does it include (health, retirment, vacation, professional development, etc.)", class: "form-control", editor_options: { image: false, color: false } %>
+            <br>
+        </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit class: "btn btn-block btn-success" %>
+  </div>
+
+  
+<% end %>

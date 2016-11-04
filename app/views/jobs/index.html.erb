@@ -1,0 +1,43 @@
+<% if user_signed_in? %>
+    <p id="notice"><%= notice %></p>
+
+    <div class="row resumepadding">
+        <div class="col-xs-12 panelpaddingbottom">
+            <div class="text-center">
+                <h1>All Opportunities</h1>
+            </div>
+            <br>
+        </div>
+        <div class="col-xs-12">       
+            <% @jobs.each do |job| %>
+                <div class="jumbotron panelpadding panelpaddingbottom">
+                    <h2>
+                        <%= job.title %>
+                        <%= link_to job do %>
+                            <span class="glyphicon glyphicon-search"></span>
+                        <% end %>
+                    </h2>
+                    <p><%= job.user.name %></p>
+                        <% if current_user.try(:admin?) or current_user == job.user(job) %>
+                          <div class="btn-group">
+                              <%= link_to 'Edit', edit_job_path(job), class: "btn btn-info" %>
+                              <%= link_to 'Delete', job, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+                          </div>
+                        <% end %>
+                </div>
+            <% end %>
+            <br>
+            <%= link_to new_job_path do %>
+                <button class="btn btn-success btn-block"><span class="glyphicon glyphicon-plus"></span></button>
+            <% end %>
+        </div>
+    </div>
+<% else %>
+    <div class="jumbopadding">
+        <div class="jumbotron">
+            <h1>Not authorized.</h1>
+            <p><%= link_to "Go Back", root_path, class: "btn btn-info" %></p>
+        </div>
+    </div>
+<% end %>
+
