@@ -23,16 +23,15 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
             <% if current_user.resume(@resume) %>
-                <!-- <a href="#"><span class="glyphicon glyphicon-file"></span> Apply for Jobs</a> -->
+                <%= link_to jobs_path do %>
+                    <span class="glyphicon glyphicon-list"></span> Opportunities
+                <% end %>
             <% end %>
-        </li>
-        <li id="exampleResume">
-            <a href="#" data-toggle="modal" data-target="#example"><span class="glyphicon glyphicon-eye-open"></span> Example Resume</a>
         </li>
         <li>
             <% if current_user.try(:admin?) %>
                 <%= link_to resumes_path do %>
-                    <span class="glyphicon glyphicon-list"></span> All Resumes
+                    <span class="glyphicon glyphicon-book"></span> All Resumes
                 <% end %>
             <% end %>
         </li>
@@ -60,69 +59,3 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
-<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleResume" id="example">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="row">
-        <div class="col-xs-12">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="glyphicon glyphicon-remove"></span></button>
-            </div>
-        </div>
-        <div class="col-xs-12 col-lg-10 col-lg-offset-1">  
-            <div class="modal-body">     
-                <div class="page-header text-center">
-                    <h2>
-                        <i>Bart Simpson</i>
-                        <br>
-                        <small>bart@simpson.com<br>+380762186735</small>
-                    </h2>
-                </div>
-                <br>
-                <p>
-                    <h3><strong>Objective:</strong></h3><br>
-                    To do as little work as possible.
-                </p>
-                <br>
-                <br>
-                <p>
-                    <h3><strong>Education:</strong></h3><br>
-                    <i>Bart's School of Skateboarding - 2013-Present</i><br>
-                    Hang out with friends, do awesome tricks on my skateboard, eat chips, and avoid teachers.
-                    <br>
-                    <br>
-                    <br>
-                    <i>Springfield High School - Forever</i><br>
-                    Sleep on desks, draw pictures on my papers, pass notes, and get in trouble.
-                </p>
-                <br>
-                <br>
-                <p>
-                    <h3><strong>Experience:</strong></h3><br>
-                    <i>Springfield High School Dance - April, 2016</i><br>
-                    Crashed the party with a water gun and my skateboard.
-                    <br>
-                    <br>
-                    <br>
-                    <i>Springfield Central Park Cleanup - Summer, 2016</i><br>
-                    As punishment for crashing the Springfield High School Dance, was asked to pick up trash at the park all summer.  Bummer...
-                </p>
-                <br>
-                <br>
-                <p>
-                    <h3><strong>Skills:</strong></h3><br>
-                    Skateboarding, computer games, paper-airplane throwing, hair styling, communication
-                </p>
-                <br>
-                <br>
-                <p>
-                    <h3><strong>References:</strong></h3><br>
-                    Crusty the Clown - crusty@theclown.com
-                </p>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>

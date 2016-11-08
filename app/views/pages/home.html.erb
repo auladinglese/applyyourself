@@ -17,10 +17,9 @@
 				<% unless current_user.resume(@resume) %>
 					<%= link_to "Build Your Resume", new_resume_path, class: "btn btn-block btn-primary btn-raised" %>
 				<% else %>
-					<%= link_to "Improve Your Resume", current_user.resume, class: "btn btn-block btn-primary btn-raised" %>
-					<br>
-					<div class="well">
-						<p><%= current_user.name %>, <br><br>Please read the review I have left below your resume.  Then, make changes to your resume following the recommendations. <br><br><strong>-Thaddeus</strong></p>
+					<div class="btn-group btn-group-justified">
+						<%= link_to "Improve Your Resume", current_user.resume, class: "btn btn-primary btn-raised" %>
+						<%= link_to "Browse Opportunities", jobs_path, class: "btn btn-info btn-raised" %>
 					</div>
 				<% end %>
 			<% end %>
