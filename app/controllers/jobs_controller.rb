@@ -39,7 +39,7 @@ class JobsController < ApplicationController
 
   def destroy
     @job.destroy
-      redirect_to jobs_url, notice: 'Opportunity was successfully destroyed.'
+      redirect_to jobs_url, notice: 'Opportunity was successfully deleted.'
   end
 
   private
