@@ -22,7 +22,7 @@ class JobsController < ApplicationController
     @job.user_id = current_user.id
 
     if @job.save
-      redirect_to @job, notice: 'Post was successfully created.'
+      redirect_to @job, notice: 'Opportunity was successfully created.'
     else
       render :new
     end
@@ -31,7 +31,7 @@ class JobsController < ApplicationController
 
   def update
       if @job.update(job_params)
-        redirect_to @job, notice: 'Post was successfully updated.'
+        redirect_to @job, notice: 'Opportunity was successfully updated.'
       else
         render :edit
       end
@@ -39,7 +39,7 @@ class JobsController < ApplicationController
 
   def destroy
     @job.destroy
-      redirect_to jobs_url, notice: 'Post was successfully destroyed.'
+      redirect_to jobs_url, notice: 'Opportunity was successfully destroyed.'
   end
 
   private
