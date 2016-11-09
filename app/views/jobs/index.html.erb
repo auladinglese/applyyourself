@@ -16,7 +16,7 @@
                             <span class="glyphicon glyphicon-search"></span>
                         <% end %>
                     </h2>
-                    <p><%= job.user.name %></p>
+                    <p>posted by <%= job.user.name %></p>
                         <% if current_user.try(:admin?) or current_user == job.user(job) %>
                           <div class="btn-group">
                               <%= link_to 'Edit', edit_job_path(job), class: "btn btn-info" %>
