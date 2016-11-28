@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161104170828) do
+ActiveRecord::Schema.define(version: 20161128144222) do
 
   create_table "bootsy_image_galleries", force: :cascade do |t|
     t.string   "bootsy_resource_type"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 20161104170828) do
     t.integer  "image_gallery_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "covers", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.text     "letter"
+    t.index ["commentable_id"], name: "index_covers_on_commentable_id_and_commentable_type"
+    t.index ["user_id"], name: "index_covers_on_user_id"
   end
 
   create_table "jobs", force: :cascade do |t|

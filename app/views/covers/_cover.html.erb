@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">by 
+            <% if current_user == cover.user %>
+                Me
+            <% else %>
+                <%= cover.user.name %>
+            <% end %>
+        </h4> 
+    </div>
+    <div class="panel-body">
+        <%= raw(cover.letter) %>
+        <p>
+            <% if cover.user == current_user or current_user.try(:admin?) %>
+                <br><%= link_to 'Delete', [@job, cover], class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: "Are you sure?" } %>
+            <% end %>
+        </p>
+    </div>
+    <% if current_user.try(:admin?) or current_user == cover.user(cover) or cover.user.try(:admin?) %>
+        <div class="panel-footer">
+            <%= link_to 'Add a Reply', new_cover_cover_path(cover) %>
+        </div>
+    <% end %>
+</div>
+<% unless cover.covers.empty? %>
+    <% if cover.user == current_user or current_user.try(:admin?) or cover.user.try(:admin?) %> 
+        <div class="indentit">
+            <%= render :partial => 'covers/cover', :collection => cover.covers %>
+        </div>
+    <% end %>
+<% end %>

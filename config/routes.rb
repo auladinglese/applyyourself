@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :covers
   resources :jobs
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   resources :resumes
@@ -15,6 +16,14 @@ Rails.application.routes.draw do
  
   resources :resumes do
     resources :reviews
+  end
+
+  resources :covers do
+    resources :covers
+  end
+
+  resources :jobs do
+    resources :covers
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

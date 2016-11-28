@@ -47,6 +47,18 @@
             	<%= link_to "Back", jobs_path, class: "btn btn-success btn-block" %> 
             <% end %>
         </div>
+        <div class="col-xs-12 col-lg-8 col-lg-offset-2">
+            <div class="page-header">
+                <h3>Applications</h3>
+            </div>
+            <div class="reviewdiv">
+                <% if current_user.try(:admin?) %>
+                    <%= link_to 'Write a Review', new_job_cover_path(@job), class: "btn btn-success btn-block" %>
+                <% end %>
+                <br>
+                <%= render :partial => 'covers/cover', :collection => @job.covers %>
+            </div>
+        </div>
     </div>
 <% else %>
     <div class="jumbotron">
