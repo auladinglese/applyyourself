@@ -53,12 +53,13 @@
         	<div class="panel panel-default">
                 <div class="panel-heading">
                     <% if @parent.try(:title) %>
-                        <h2 class="panel-title">Apply | Write a Cover Letter</h2>
+                        <h2 class="panel-title">Apply</h2>
                     <% else %>
                         <h2 class="panel-title">Respond to Applicant</h2>
                     <% end %>
                 </div>
                 <div class="panel-body">
+                    <p class="text-center">Need help?  Try <a target="_blank" href="https://www.reed.co.uk/career-advice/free-cover-letter-template/">this</a> or <a target="_blank" href="https://owl.english.purdue.edu/owl/resource/642/01/">this</a>.</p>
                     <%= form_for [@parent, @cover] do |f| %>
         				<div class="form-group">
                             <% if @parent.try(:title) %>
