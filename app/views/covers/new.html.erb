@@ -12,7 +12,7 @@
                     <br>
                     <br>
                     <% unless current_user.try(:admin?) %>
-                        <a href="#description" data-target="#description" data-toggle="modal" class="btn btn-primary">Opportunity Description</a>
+                        <a href="#description" data-target="#description" data-toggle="modal" class="btn btn-primary btn-block">Opportunity Description</a>
                     <% end %>
                     <div class="modal fade" id="description">
                         <div class="modal-dialog well">
