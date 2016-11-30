@@ -52,9 +52,7 @@
                 <h3>Applications</h3>
             </div>
             <div class="reviewdiv">
-                <% if current_user.try(:admin?) %>
-                    <%= link_to 'Apply', new_job_cover_path(@job), class: "btn btn-success btn-block" %>
-                <% end %>
+                <%= link_to 'Apply', new_job_cover_path(@job), class: "btn btn-success btn-block" %>
                 <br>
                 <%= render :partial => 'covers/cover', :collection => @job.covers %>
             </div>
