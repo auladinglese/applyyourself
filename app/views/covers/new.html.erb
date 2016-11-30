@@ -10,10 +10,12 @@
                     </h2>
                     <br>
                     <br>
-                    <div class="btn-group btn-group-justified">
-                        <a href="#description" data-target="#description" data-toggle="modal" class="btn btn-primary">Opportunity Description</a>
-                        <%= link_to "My Resume", resume_path(current_user.resume), class: "btn btn-info", target: "_blank" %>
-                    </div>
+                    <% unless current_user.try(:admin?) %>
+                        <div class="btn-group btn-group-justified">
+                            <a href="#description" data-target="#description" data-toggle="modal" class="btn btn-primary">Opportunity Description</a>
+                            <%= link_to "My Resume", resume_path(current_user.resume), class: "btn btn-info", target: "_blank" %>
+                        </div>
+                    <% end %>
                     <div class="modal fade" id="description">
                         <div class="modal-dialog well">
                             <h2>
