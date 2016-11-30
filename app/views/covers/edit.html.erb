@@ -1,0 +1,28 @@
+<div class="centercontainer resumepadding">
+    <div class="centerrow">
+        <div class="centercolumnresume">
+        	<div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Edit</h2>
+                </div>
+                <div class="panel-body">
+                    <%= form_for [@parent, @cover] do |f| %>
+        				<div class="form-group">
+                            <% if @parent.try(:title) %>
+        					   <%= f.bootsy_area :letter, class:"form-control", placeholder: "Write about your interest in the position and how your education, skills, and experience make you a good candidate.  Please address the name of the point of contact for the opportunity.", rows: "12", editor_options: { image: false, font_styles: false, color: false } %>
+                            <% else %>
+                               <%= f.bootsy_area :letter, class:"form-control", placeholder: "Will you invite the applicant for an interview or politely decline?", rows: "8", editor_options: { image: false, font_styles: false, color: false } %>    
+                            <% end %>
+        				</div>
+        				<div class="form-group">
+        					<%= f.submit class: "btn btn-success btn-block" %>
+						</div>    				
+    				<% end %>
+                </div>
+                <div class="panel-footer">
+                    <%= link_to 'Back', :back %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

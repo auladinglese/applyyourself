@@ -1,6 +1,6 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h4 class="panel-title">by 
+        <h4 class="panel-title">from 
             <% if current_user == cover.user %>
                 Me
             <% else %>
@@ -12,7 +12,7 @@
         <%= raw(cover.letter) %>
         <p>
             <% if cover.user == current_user or current_user.try(:admin?) %>
-                <br><%= link_to 'Delete', [@job, cover], class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: "Are you sure?" } %>
+                <br><%= link_to 'Edit', edit_job_cover_path(@job, cover), class: "btn btn-primary btn-sm" %> | <%= link_to 'Delete', [@job, cover], class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: "Are you sure?" } %>
             <% end %>
         </p>
     </div>

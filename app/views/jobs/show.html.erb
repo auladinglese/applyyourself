@@ -53,7 +53,7 @@
             </div>
             <div class="reviewdiv">
                 <% if current_user.try(:admin?) %>
-                    <%= link_to 'Write a Review', new_job_cover_path(@job), class: "btn btn-success btn-block" %>
+                    <%= link_to 'Apply', new_job_cover_path(@job), class: "btn btn-success btn-block" %>
                 <% end %>
                 <br>
                 <%= render :partial => 'covers/cover', :collection => @job.covers %>

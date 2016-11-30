@@ -22,15 +22,17 @@ class CoversController < ApplicationController
     @cover.user_id = current_user.id
 
     if @cover.save
-      redirect_to job_path(@cover.job), notice: 'Thank you for applying!'
+      redirect_to job_path(@cover.job), notice: 'Thank you!'
     else
       render :new
     end
   end
 
   def update
+    @cover = Cover.find(params[:id])
+
     if @cover.update(cover_params)
-      redirect_to @cover, notice: 'Cover was successfully updated.'
+      redirect_to @cover, notice: 'Update successful.'
     else
       render :edit
     end
@@ -40,7 +42,7 @@ class CoversController < ApplicationController
     @cover = Cover.find(params[:id])
 
     @cover.destroy
-      redirect_to job_path(@cover.job), notice: 'Cover was successfully destroyed.'
+      redirect_to job_path(@cover.job), notice: 'Successfully deleted.'
   end
 
   private
