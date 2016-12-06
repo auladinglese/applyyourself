@@ -32,7 +32,7 @@ class CoversController < ApplicationController
     @cover = Cover.find(params[:id])
 
     if @cover.update(cover_params)
-      redirect_to jobs_path, notice: 'Update successful.'
+      redirect_to job_path(@cover.job), notice: 'Update successful.'
     else
       render :edit
     end
