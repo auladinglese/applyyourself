@@ -17,7 +17,9 @@
 				<% unless current_user.resume(@resume) or current_user.try(:admin?) %>
 					<%= link_to "Build Your Resume", new_resume_path, class: "btn btn-block btn-primary btn-raised" %>
 				<% else %>
-					<%= link_to "Browse Opportunities", jobs_path, class: "btn btn-primary btn-block btn-raised" %>
+					<%= link_to "Browse Opportunities", jobs_path, class: "btn btn-primary btn-raised btn-block" %>
+					<br>| or |<br>
+					<a href="http://www.speakconfidentenglish.com/10-interview-questions-in-english/" target="_blank">Practice Common Interview Questions</a>
 				<% end %>
 			<% end %>
 		</div>
